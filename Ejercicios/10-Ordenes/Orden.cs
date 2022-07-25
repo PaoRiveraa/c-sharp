@@ -9,7 +9,11 @@ public class Orden
     public Cliente Cliente { get; set; }
     public Vendedor Vendedor { get; set; }
     public List<OrdenDetalle> ListaOrdenDetalle { get; set; }
-    public double Total { get; set; }
+    public double Total { get; set; }  // total 
+    
+    public double Subtotal { get; set; } // Subtotal
+
+    public double ISV {get; set; } // ISV
 
     public Orden(int codigo, DateTime fecha, string numeroOrden, Cliente cliente, Vendedor vendedor)
     {
@@ -29,6 +33,9 @@ public class Orden
         OrdenDetalle o = new OrdenDetalle(nuevoCodigo, 1, producto);
         ListaOrdenDetalle.Add(o);
 
-        Total += cantidad * producto.Precio;
+        Subtotal += cantidad * producto.Precio; // formulas agregadas 
+        ISV = Subtotal*0.15;
+        Total - Subtotal + ISV ;
+
     }
 }

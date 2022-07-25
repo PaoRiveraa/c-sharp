@@ -56,10 +56,43 @@ namespace inventario
             cantidad = Console.ReadLine();
 
             movimientoInventario(codigo, Int32.Parse(cantidad), "+");
-        }
+
+        } 
+        
+        public void ajustePositivoDeInventario() {
+        string codigo = "";
+        string cantidad ="";
+
+        Console.WriteLine("Ajuste Positivo de Productos al Inventario");
+        Console.WriteLine("**********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+
+        movimientoInventario(codigo, Int32.Parse(cantidad), "+");
+
+    }
+
+    
+    public void ajusteNegativoDeInventario() {
+        string codigo = "";
+        string cantidad ="";
+
+        Console.WriteLine("Ajuste Negativo de Productos al Inventario");
+        Console.WriteLine("**********************************");
+        Console.Write("Ingrese el codigo del producto: ");
+        codigo = Console.ReadLine();
+        Console.Write("Ingrese la cantidad del producto: ");
+        cantidad = Console.ReadLine();
+
+        movimientoInventario(codigo, Int32.Parse(cantidad), "-");
+
+    }
+
 
         
-        static void Main(string[] args)
+    static void Main(string[] args)
         {
             string opcion = "";
 
@@ -72,6 +105,9 @@ namespace inventario
                 Console.WriteLine("1 - Productos");
                 Console.WriteLine("2 - Ingreso de Inventario");
                 Console.WriteLine("3 - Salida de Inventario");
+                Console.WriteLine("4 - Ajuste Positivo de inventario ");
+                Console.WriteLine("5 - Ajuste Negativo de inventario");
+                Console.WriteLine("0 - Salir");
                 Console.WriteLine("0 - Salir");
                 opcion = Console.ReadLine();
 
@@ -83,6 +119,16 @@ namespace inventario
                     case "2":
                         ingresoDeInventario();
                         break;
+                    case "3":
+                        salidaDeInventario();
+                        break;
+                    case "4":
+                        ajustePositivoDeInventario();
+                        break;
+                    case "5":
+                        ajusteNegativoDeInventario();
+                     break;  
+
                     default:
                     break;
                 }

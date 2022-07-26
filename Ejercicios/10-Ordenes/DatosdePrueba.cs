@@ -31,6 +31,10 @@ public class DatosdePrueba
 
         Producto p3 = new Producto(3, "Monitor", 4000);
         ListadeProductos.Add(p3);
+
+
+        Producto p4 = new Producto(4, "Audifonos", 500);
+        ListadeProductos.Add(p4);
     }
 
     private void cargarClientes()
@@ -111,6 +115,7 @@ public class DatosdePrueba
             Console.WriteLine("Cliente no encontrado");
             Console.ReadLine();
             return;
+
         } else {
             Console.WriteLine("Cliente: " + cliente.Nombre);
             Console.WriteLine("");
@@ -158,6 +163,8 @@ public class DatosdePrueba
 
         Console.WriteLine("");
         Console.WriteLine("Total de la orden es de: " + nuevaOrden.Total);
+        Console.WriteLine("El ISV es" + nuevaOrden.ISV);
+        Console.WriteLine("Total de la orden es de :" +nuevaOrden.Total);
         Console.ReadLine();
     }
 
@@ -167,14 +174,14 @@ public class DatosdePrueba
         Console.WriteLine("Lista de Ordenes");
         Console.WriteLine("================");
         Console.WriteLine("");  
-        Console.WriteLine("Codigo | Fecha | Total");
+        Console.WriteLine("Codigo | Fecha | Subtotal | ISV | Total" );
         Console.WriteLine("Cliente | Vendedor");
         Console.WriteLine("======================");
         Console.WriteLine("");  
 
         foreach (var orden in ListaOrdenes)
         {
-            Console.WriteLine(orden.Codigo + " | " + orden.Fecha + " | " + orden.Total);
+            Console.WriteLine(orden.Codigo + " |"+orden.Fecha+" | " +orden.Subtotal +" |" +orden.ISV +"| " + orden.Total);
             Console.WriteLine(orden.Cliente.Nombre + " | " + orden.Vendedor.Nombre);
             
             foreach (var detalle in orden.ListaOrdenDetalle)
@@ -188,3 +195,4 @@ public class DatosdePrueba
         Console.ReadLine();
     }
 }
+

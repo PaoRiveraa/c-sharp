@@ -10,4 +10,3 @@ public class Persona
         Console.WriteLine("Correo enviado a: " + Nombre);
     }
 }
-

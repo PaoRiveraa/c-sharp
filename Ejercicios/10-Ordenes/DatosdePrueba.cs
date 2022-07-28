@@ -31,6 +31,9 @@ public class DatosdePrueba
 
         Producto p3 = new Producto(3, "Monitor", 4000);
         ListadeProductos.Add(p3);
+
+        Producto p4 = new Producto(4, "Audifonos", 500);
+        ListadeProductos.Add(p4);
     }
 
     private void cargarClientes()
@@ -151,7 +154,8 @@ public class DatosdePrueba
 
             Console.WriteLine("Desea continuar? s/n");
             string continuar = Console.ReadLine();
-            if (continuar.ToLower() == "n") {
+            if (continuar.ToLower() == "n")
+            {
                 break;
             }
         }
